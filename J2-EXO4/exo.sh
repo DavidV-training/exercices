@@ -1,8 +1,8 @@
 #!/bin/sh
 
-IMAGE=training/basicservice:mamadou
-CONTAINER=service-java
-OPTIONS="--server.port=8081"
+IMAGE=training/ex-docker-nginx-phpfpm:mamadou
+CONTAINER=ex-docker-nginx-phpfpm
+
 
 docker stop "${CONTAINER}" > /dev/null 2>&1
 docker rm "${CONTAINER}" > /dev/null 2>&1
@@ -13,8 +13,6 @@ docker build -t ${IMAGE} .
 docker run -d \
   --name ${CONTAINER} \
   -p 8081 \
-  -e MEM_SIZE=256M \
   --health-interval 1s \
-  --health-cmd 'wget -T 1 -q -O /dev/null localhost:8081/actuator/health' \
-"${IMAGE}" "${OPTIONS}"
-
+  --health-cmd 'wget -T 1 -q -O /dev/null localhost:8080/index.php' \
+"${IMAGE}"
