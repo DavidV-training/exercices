@@ -1,0 +1,1 @@
+docker build -t mynginx:latest build-nginx
