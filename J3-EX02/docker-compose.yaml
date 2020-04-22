@@ -1,0 +1,36 @@
+version: '3.2'
+services:
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: defaultBase
+      MYSQL_USER: root
+      MYSQL_PASSWORD: toor
+    expose:
+    - '3306'
+    volumes:
+    - ${PWD}/data:/var/lib/mysql
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+  
+  fpm:
+    image: php:7-fpm
+    volumes:
+      - "./etc/php/php.ini:/usr/local/etc/php/conf.d/php.ini"
+      - "./site:/var/www/html"
+
+  nginx:
+    image: mynginx:latest
+    volumes:
+      - ${PWD}/site:/etc/nginx/conf.d/build-nginx
+    ports:
+      - "8080:80"
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=80
