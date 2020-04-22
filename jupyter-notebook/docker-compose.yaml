@@ -1,0 +1,13 @@
+---
+version: '3.5'
+
+services:
+  jupyter:
+    container_name: jupyter
+    image: jupyter/tensorflow-notebook:latest
+    environment:
+      - VARTEST=test
+    ports:
+      - 8888:8888
+    volumes:
+      - ./notebooks/:/home/jovyan/work
