@@ -4,10 +4,10 @@ services:
     image: mariadb
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: example
-      MYSQL_DATABASE: defaultBase
-      MYSQL_USER: root
-      MYSQL_PASSWORD: toor
+      MYSQL_ROOT_PASSWORD: rooting
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: imadmin
     expose:
     - '3306'
     volumes:
