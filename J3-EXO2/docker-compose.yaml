@@ -1,0 +1,11 @@
+version: '10.5'
+
+services:
+  db:
+    image: mariadb:10.5
+    volumes:
+      - ./data:/var/lib/mysql
+  front:
+    image: adminer
+    ports:
+      - 8080:8080
