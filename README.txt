@@ -1,4 +1,4 @@
-1) Créer un compte github
+﻿1) Créer un compte github
 2) cloner : https://github.com/DavidV-training/exercices.git
 3) créer une branche personnelle : 
     git checkout -b david-vergison
@@ -7,6 +7,7 @@
 6) générer un commit et l'envoyer : 
     git add . && git commit -m"message de commit" && git push origin david-vergison
     (il faudra vous connecter à github, voir point 1)
+
 
 -----------------------
 
