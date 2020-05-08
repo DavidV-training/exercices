@@ -1,0 +1,19 @@
+version: '2.0'
+services:
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: defaultBase
+      MYSQL_USER: root
+      MYSQL_PASSWORD: toor
+    expose:
+    - '3306'
+    volumes:
+    - ${PWD}/mariadb:/var/lib/mysql
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+    - 8080:8080
