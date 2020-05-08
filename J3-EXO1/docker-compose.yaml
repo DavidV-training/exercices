@@ -1,36 +1,16 @@
-version: '3'
+version: '3.1'
 
 services:
-  mariadb:
-    container_name: mariadb
+  db:
     image: mariadb:10.5
     environment:
-      - MYSQL_ROOT_PASSWORD=
-      - MYSQL_DATABASE=${DATABASE}
-      - MYSQL_USER=${DBUSER}
-      - MYSQL_PASSWORD=${DBPASSWORD}
+      - MYSQL_USER=mamadou
+      - MYSQL_PASSWORD=mamadou
+      - MYSQL_ROOT_PASSWORD=mamadou
+      - MYSQL_DATABASE=formation
     volumes:
-      - ./data/:/var/lib/mysql
-
-  adminer:
-    container_name: adminer
+      - ./data:/var/lib/mysql
+  front:
     image: adminer
     ports:
-      - 8081:8080
-    environment:
-      - ADMINER_DEFAULT_SERVER=mariadb
-    
-  nginx:
-    container_name: nginx
-    image: my-nginx:3
-    build: ./build-nginx
-    ports:
-      - 8080:80
-    volumes:
-      - ./site/:/code/
-
-  fpm:
-    container_name: fpm
-    image: php:7-fpm
-    volumes:
-      - ./site/:/code/
+      - 8080:8080
