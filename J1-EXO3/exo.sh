@@ -8,9 +8,9 @@ docker rm adminer > /dev/null 2>&1
 
 docker run -d \
   --name mariadb \
-  -e MYSQL_DATABASE=formationdocker \
-  -e MYSQL_USER=david \
-  -e MYSQL_PASSWORD=pictime \
+  -e MYSQL_DATABASE=DockerDB \
+  -e MYSQL_USER=root \
+  -e MYSQL_PASSWORD=root \
   -e MYSQL_ROOT_PASSWORD=supermotdepasse \
   -p 3306:3306 \
 mariadb:10.5
