@@ -15,9 +15,5 @@ docker run -d \
   -p 3306:3306 \
 mariadb:10.5
 
-docker run -d \
-  --name adminer \
-  -p 8080:8080 \
-  --link mariadb:db \
-adminer
+docker run --link mymariadb:db -p 8080:8080 adminer
 
