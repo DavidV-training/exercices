@@ -20,4 +20,4 @@ docker run -d \
 "${IMAGE}" "${OPTIONS}"
 
 
-# --health-cmd 'wget -T 1 -q -O /dev/null localhost:8081/actuator/health' \
+# --health-cmd 'wget -T 1 -q -O /dev/null localhost:8081/actuator/health' \  
