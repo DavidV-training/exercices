@@ -1,9 +1,6 @@
 #!/bin/bash
 
 
-# paramétrer un conteneur nginx
-# avec un health-check
-
 docker stop nginx > /dev/null 2>&1
 docker rm nginx > /dev/null 2>&1
 
