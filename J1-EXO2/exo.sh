@@ -5,7 +5,7 @@ docker rm nginx > /dev/null 2>&1
 
 mkdir -p /tmp/exo2/
 
-echo "ok !" > /tmp/exo2/index.htm
+echo "ceci est mon test !" > /tmp/exo2/index.htm
 
 docker run -d \
     --name nginx \

@@ -4,10 +4,10 @@ services:
   db:
     image: mariadb:10.5
     environment:
-      - MYSQL_USER=david
-      - MYSQL_PASSWORD=pictime
-      - MYSQL_ROOT_PASSWORD=supermotdepasse
-      - MYSQL_DATABASE=formation
+      - MYSQL_USER=test
+      - MYSQL_PASSWORD=test
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=first_bdd
     volumes:
       - ./data:/var/lib/mysql
   front:
