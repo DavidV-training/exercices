@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 docker stop nginx > /dev/null 2>&1
 docker rm nginx > /dev/null 2>&1
 
